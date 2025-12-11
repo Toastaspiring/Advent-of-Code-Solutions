@@ -22,15 +22,11 @@ def solve_safe(filename='input.txt'):
             continue
 
         if direction == 'R':
-            # Rotate right (add)
             current_pos = (current_pos + distance) % total_positions
         elif direction == 'L':
-            # Rotate left (subtract)
-            # Python's modulo operator handles negatives correctly for this puzzle
-            # e.g., -5 % 100 = 95
             current_pos = (current_pos - distance) % total_positions
         
-        # Check if the dial is pointing at 0
+        
         if current_pos == 0:
             zero_count += 1
 

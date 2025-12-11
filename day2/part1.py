@@ -1,5 +1,5 @@
 def solve_gift_shop():
-    # The input string from your file
+
     input_data = "18623-26004,226779-293422,65855-88510,868-1423,248115026-248337139,903911-926580,97-121,67636417-67796062,24-47,6968-10197,193-242,3769-5052,5140337-5233474,2894097247-2894150301,979582-1016336,502-646,9132195-9191022,266-378,58-91,736828-868857,622792-694076,6767592127-6767717303,2920-3656,8811329-8931031,107384-147042,941220-969217,3-17,360063-562672,7979763615-7979843972,1890-2660,23170346-23308802"
 
     ranges = input_data.split(',')
@@ -13,12 +13,12 @@ def solve_gift_shop():
         start = int(start_str)
         end = int(end_str)
 
-        # Iterate through the range inclusive
+
         for num in range(start, end + 1):
             s_num = str(num)
             length = len(s_num)
 
-            # An ID must have even length to be two repeated sequences
+
             if length % 2 == 0:
                 mid = length // 2
                 first_half = s_num[:mid]
@@ -29,7 +29,7 @@ def solve_gift_shop():
                     invalid_ids_found.append(num)
 
     print(f"\nFound {len(invalid_ids_found)} invalid IDs.")
-    # printing first few as a sanity check
+
     print(f"Examples found: {invalid_ids_found[:5]} ...")
     
     print(f"\nTotal Sum of Invalid IDs: {total_invalid_sum}")
